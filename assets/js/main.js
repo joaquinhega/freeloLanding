@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.toggle('active');
         });
 
-        // Cerrar menú al hacer clic en un enlace (para experiencia móvil)
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -18,20 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Animación de fade-in de secciones al hacer scroll
     const sections = document.querySelectorAll('.section.animate-fade-in-up');
 
     const observerOptions = {
-        root: null, // Observa el viewport
+        root: null, 
         rootMargin: '0px',
-        threshold: 0.1 // Cuando el 10% de la sección es visible
+        threshold: 0.1 
     };
 
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Dejar de observar una vez que la animación se activa
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -46,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm && formMessage) {
         contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Evita el envío por defecto del formulario
+            event.preventDefault();
 
             const name = contactForm.elements['name'].value.trim();
             const email = contactForm.elements['email'].value.trim();
@@ -66,14 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Aquí es donde enviarías los datos del formulario (ej. a un servidor)
-            // Por ahora, simularemos un envío exitoso
-            console.log('Formulario enviado:', { name, email, message });
-
+            // Simulación de envío exitoso 
             formMessage.textContent = '¡Gracias! Tu mensaje ha sido enviado.';
             formMessage.className = 'form-message success';
             formMessage.style.display = 'block';
-            contactForm.reset(); // Limpia el formulario
+            contactForm.reset(); 
         });
     }
 
