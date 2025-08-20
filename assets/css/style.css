@@ -137,7 +137,6 @@ p {
     padding: 1rem 20px;
 }
 
-/* Nuevo estilo para el contenedor del logo */
 .logo-container {
     background-color: var(--logo-badge-bg);
     padding: 8px 18px; 
@@ -230,7 +229,6 @@ p {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Sección Hero */
 .hero {
     display: flex;
     flex-direction: row; 
@@ -244,7 +242,6 @@ p {
     overflow: hidden; 
 }
 
-/* Formas de fondo abstractas para el hero */
 .hero::before, .hero::after {
     content: '';
     position: absolute;
@@ -393,12 +390,10 @@ p {
     transform: translateY(-3px);
 }
 
-/* Estilos para iconos en botones */
 .cta-button i {
     font-size: 1.2rem;
 }
 
-/* Secciones de Problema y Solución */
 .problem-solution-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -567,7 +562,7 @@ p {
     transform: translateY(-5px) scale(1.1); 
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 992px) {
     .hero {
         flex-direction: column;
@@ -593,6 +588,7 @@ p {
         max-width: 80%; 
     }
 }
+/* Pantallas pequeñas */
 
 @media (max-width: 768px) {
     .navbar {
@@ -650,7 +646,6 @@ p {
         gap: 15px;
     }
 
-    /* Ajusta el padding de los elementos en las grids */
     .feature-item, .tech-item, .diff-item, .problem-item, .solution-item {
         padding: 30px 15px;
     }
@@ -659,9 +654,25 @@ p {
         flex-direction: column; 
         gap: 15px;
     }
+    .section#descarga .call-to-action {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .section#descarga .cta-button {
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 14px 24px;
+        font-size: 1.08rem;
+        box-sizing: border-box;
+        border-radius: 40px;
+    }
 }
 
-/* Media Query para pantallas muy pequeñas (teléfonos pequeños) */
+/* Pantallas muy pequeñas */
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem; 
@@ -677,5 +688,10 @@ p {
 
     .contact-form-container {
         padding: 30px 20px; 
+    }
+    .section#descarga .cta-button {
+        max-width: 95vw;
+        font-size: 1rem;
+        padding: 12px 10px;
     }
 }
